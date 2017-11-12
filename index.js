@@ -31,8 +31,8 @@ app.post('/stop', (req, res) => {
 
 app.get('/img', (req, res) => {
 
-  var folder = '/Users/steve/Projects/led-control';
-  //var folder = '/app/led/rpi-rgb-led-matrix/utils/img'
+  //var folder = '/Users/steve/Projects/led-control';
+  var folder = '/app/led/rpi-rgb-led-matrix/utils/img'
 
   var folders = fs.readdirSync(folder);
 
@@ -41,10 +41,6 @@ app.get('/img', (req, res) => {
 });
 
 app.post('/img', (req, res) => {
-  
-  var folder = '/Users/steve/Projects/led-control';
-  //var folder = '/app/led/rpi-rgb-led-matrix/utils/img'
-
   myLed = new Led(req.body.name);
   myLed.start();
   
