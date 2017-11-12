@@ -2,7 +2,7 @@
 $('.btn-danger').click(function() {
     $.ajax({
         type: "POST",
-        url: 'http://localhost:3000/stop',
+        url: '/stop',
         data: {},
         success: function() {
             console.log('stop success');
@@ -13,7 +13,7 @@ $('.btn-danger').click(function() {
 $('.btn-success').click(function() {
     $.ajax({
         type: "POST",
-        url: 'http://localhost:3000/start',
+        url: '/start',
         data: {},
         success: function() {
             console.log('start success');
