@@ -14,11 +14,15 @@ app.post('/start', (req, res) => {
   
   console.log('start');
   myLed.start();
+
+  res.sendStatus(200);
 });
 
 app.post('/stop', (req, res) => {
   console.log('stop');
   myLed.stop();
+
+  res.sendStatus(200);
 });
 
 app.listen(3000, () => console.log('App listening on port 3000!'))
