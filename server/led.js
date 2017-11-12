@@ -7,7 +7,8 @@ function Led(_img) {
 
 Led.prototype.start = function() {
     if (this.cmd) {
-        this.cmd.kill();
+        this.cmd = child_process.exec('killall demo', onCmdFinish);
+        console.log('process killed');
     }
 
     //this.cmd = child_process.spawn('ls');
