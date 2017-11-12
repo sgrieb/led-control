@@ -1,19 +1,26 @@
 const express = require('express');
 const app = express();
-const child_process = require('child_process');
+var Led = require('./server/led');
 
-app.get('/', (req, res) => res.send('Hello World!'))
+// front end serve
+app.use(express.static('html'));
+app.use('/js', express.static('js'));
+app.use('/css', express.static('css'));
 
-child_process.exec('cd /app/led/rpi-rgb-led-matrix && sudo examples-api-use/demo -D0', (error, stdout, stderr) => {
-  if (error) {
-    console.error(`exec error: ${error}`);
-    return;
-  }
-  console.log(`stdout: ${stdout}`);
-  console.log(`stderr: ${stderr}`);
+var myLed = new Led('');
+
+// backend
+app.post('/start', (req, res) => {
+  console.log('start');
+  myLed.start();
 });
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+app.post('/stop', (req, res) => {
+  console.log('stop');
+  myLed.stop();
+});
+
+app.listen(3000, () => console.log('App listening on port 3000!'))
 
 
 
