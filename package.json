@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sgrieb/led-control/issues"
   },
-  "homepage": "https://github.com/sgrieb/led-control#readme"
+  "homepage": "https://github.com/sgrieb/led-control#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
