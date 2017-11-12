@@ -13,7 +13,7 @@ Led.prototype.start = function() {
 
     //this.cmd = child_process.spawn('ls');
     //this.cmd = child_process.spawn('cd /app/led/rpi-rgb-led-matrix && sudo examples-api-use/demo -D0');
-    this.cmd = child_process.exec('cd /app/led/rpi-rgb-led-matrix && nohup sudo examples-api-use/demo -D0 </dev/null >myprogram.log & ', onCmdFinish);
+    this.cmd = child_process.exec('cd /app/led/rpi-rgb-led-matrix/utils && nohup sudo ./led-image-viewer ./img/xm.gif </dev/null >myprogram.log & ', onCmdFinish);
 };
 
 Led.prototype.stop = function() {
