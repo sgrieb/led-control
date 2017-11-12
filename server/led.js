@@ -7,7 +7,7 @@ function Led(_img) {
 
 Led.prototype.start = function() {
     if (this.cmd) {
-        this.cmd = child_process.exec('killall demo', onCmdFinish);
+        this.cmd = child_process.exec('killall led-image-viewer', onCmdFinish);
         console.log('process killed');
     }
 
@@ -18,7 +18,7 @@ Led.prototype.start = function() {
 
 Led.prototype.stop = function() {
     if (this.cmd) {
-        this.cmd = child_process.exec('killall demo', onCmdFinish);
+        this.cmd = child_process.exec('killall led-image-viewer', onCmdFinish);
         console.log('process killed');
     }
 };
